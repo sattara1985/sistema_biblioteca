@@ -1,36 +1,23 @@
-# Biblioteca Virtual - CRUD con Python y MySQL
+# 📚 Biblioteca Virtual - CRUD con Django y MySQL
 
-Este proyecto es un sistema CRUD para la gestión de libros,
-desarrollado en Python con conexión a MySQL utilizando DJANGO COMO FREAMEWORK.
+Este proyecto es un sistema CRUD para la gestión de libros, desarrollado en **Python + Django**, con conexión a **MySQL**.
 
-## Funcionalidades
-- Registrar libros
+## 🚀 Funcionalidades
+- Agregar libros
 - Listar libros
-- Actualizar libros
+- Editar libros
 - Eliminar libros
-- Registrar ventas
-- Evitar ventas con stock insuficiente
-- Actualizar stock automáticamente
-- Restaurar stock al eliminar ventas
+- Buscador de libros
+- Modo oscuro
+- Inicio de sesión
+- Interfaz responsiva con Bootstrap
 
-## Requisitos
+## 🛠 Tecnologías
 - Python 3.10+
-- mysql-connector-python
-- MySQL/XAMPP
+- Django 5
+- MySQL 
+- Bootstrap 5
 
-## Ejecución
-python -m venv venv
+## 📦 Instalación
 
-venv\Scripts\activate      # Windows
-
-# INSTALAR DEPENDENCIAS
-pip install -r requirements.txt
-
-# REALIZAR MIGRACIONES
-
-python manage.py migrate
-
-# EJECUTAR EL SERVIDOR
-
-python manage.py runserver
-
+### 1. Crear entorno virtual
