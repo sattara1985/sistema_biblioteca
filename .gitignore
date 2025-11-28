@@ -1,0 +1,57 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+ENV/
+
+# Bytecode, cachés y logs
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.egg
+
+# Bases de datos locales
+db.sqlite3
+*.sqlite3
+
+# Archivos de configuración locales / secretos
+.env
+.env.* 
+*.env
+
+# Archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos IDE / editores
+.vscode/
+*.code-workspace
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de build / distribuciones
+build/
+dist/
+*.manifest
+*.spec
+
+# Archivos estáticos recolectados (opcional si los mantienes fuera)
+staticfiles/
+static_collected/
+
+# Carpeta de medios (si la usas para uploads locales)
+media/
+uploads/
+
+# Logs
+*.log
+
+# Coverage, pytest
+htmlcov/
+.coverage
+.pytest_cache/
+
+# Macros y cachés de pip / wheel
+pip-wheel-metadata/

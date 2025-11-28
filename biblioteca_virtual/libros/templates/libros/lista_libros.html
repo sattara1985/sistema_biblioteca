@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de libros{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">📚 Lista de Libros</h2>
+
+<!-- BUSCADOR -->
+<form method="GET" class="mb-4 d-flex">
+    <input type="text" name="q" value="{{ query }}" class="form-control me-2"
+           placeholder="Buscar libro por título...">
+    <button class="btn btn-primary">Buscar</button>
+</form>
+
+<!-- TARJETAS DE LIBROS -->
+<div class="row">
+    {% for libro in libros %}
+    <div class="col-md-4 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">{{ libro.titulo }}</h5>
+                <p class="card-text">{{ libro.autor }}</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Ver</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>No hay libros para mostrar.</p>
+    {% endfor %}
+</div>
+
+<hr class="my-5">
+
+<!-- TABLA CRUD -->
+<h2 class="mb-4">📘 Administración de Libros</h2>
+
+<a href="{% url 'crear_libro' %}" class="btn btn-success mb-3">➕ Agregar Libro</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Fecha Publicación</th>
+            <th>Disponible</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for libro in libros %}
+        <tr>
+            <td>{{ libro.titulo }}</td>
+            <td>{{ libro.autor }}</td>
+            <td>{{ libro.fecha_publicacion }}</td>
+            <td>
+                {% if libro.disponible %}
+                    ✔ Disponible
+                {% else %}
+                    ✘ No disponible
+                {% endif %}
+            </td>
+            <td>
+                <a href="{% url 'editar_libro' libro.id %}" class="btn btn-warning btn-sm">✏ Editar</a>
+                <a href="{% url 'eliminar_libro' libro.id %}" class="btn btn-danger btn-sm">🗑 Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No hay libros en la base de datos</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
